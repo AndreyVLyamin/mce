@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Config SYSTEM "Config.dtd">
+<Config>
+	<Port value="2003"/>
+	<UserInfo login="mam" password="mam"/>
+	<UserInfo login="ove" password="ove"/>
+
+	<Timeouts>
+		<Timeout name="TranslationSeconds" value="5"/>
+	</Timeouts>
+
+</Config>

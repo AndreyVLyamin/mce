@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeEditor>
+
+	<CodeStyle name="Basic" aliasName="basicStyle">
+		<Keyword name="if"/>
+		<Keyword name="then"/>
+		<Keyword name="begin"/>
+		<Keyword name="else"/>
+		<Keyword name="elseif"/>
+		<Keyword name="endif"/>
+		<Keyword name="loop"/>
+		<Keyword name="until"/>
+		<Keyword name="do"/>
+		<Keyword name="while"/>
+		<Keyword name="wend"/>
+		<Keyword name="begin"/>
+		<Keyword name="and"/>
+		<Keyword name="or"/>
+		<Keyword name="not"/>
+
+		<Keyword name="sqrt"/>
+		<Keyword name="sin"/>
+		<Keyword name="cos"/>
+		<Keyword name="tan"/>
+		<Keyword name="asin"/>
+		<Keyword name="acos"/>
+		<Keyword name="atan"/>
+		<Keyword name="round"/>
+
+		<If entry="if">
+			<IfInsert>if &lt;условие&gt; then\n\t\nendif\n</IfInsert>
+			<IfElseInsert>if &lt;условие&gt; then\n\t\nelse\n\t\nendif\n</IfElseInsert>
+			<Condition start="" end=""/>
+			<Block start="then" end="endif"/>
+			<Elseif>elseif</Elseif>
+			<Else>else</Else>
+		</If>
+		<While entry="while">
+			<WhileInsert>while &lt;условие&gt;\n\t\nwend\n</WhileInsert>
+			<Condition start="" end=""/>
+			<Block start="\n" end="wend"/>
+		</While>
+		<DoWhile entry="do">
+			<DoWhileInsert>do\n\t\nloop until &lt;условие&gt;\n</DoWhileInsert>
+			<Block start="\n" end="loop"/>
+			<While bInverse="true">until</While>
+			<Condition start="" end=""/>
+		</DoWhile>
+		<Expressions>
+			<Assign>=</Assign>
+			<Eq>=</Eq>
+			<Neq>&lt;&gt;</Neq>
+			<Lt>&lt;</Lt>
+			<Gt>&gt;</Gt>
+			<Lte>&lt;=</Lte>
+			<Gte>&gt;=</Gte>
+			<Not>not</Not>
+			<Or>or</Or>
+			<And>and</And>
+			<Mod>mod</Mod>
+			<Comment single="'" multiStart="MultiCommentStart" multiEnd="MultiCommentEnd">
+				<SingleInsert>' &lt;комментарий&gt;\n</SingleInsert>
+				<MultilineInsert></MultilineInsert>
+			</Comment>
+			<Group start="(" end=")"/>
+			<ArrayIndex start="[" end="]"/>
+			<BlockEnd>\n</BlockEnd>
+			<Quotes single="&quot;" double="&quot;"/>
+
+			<Function>
+				<Sqrt suffix="( &lt;аргумент&gt; )">sqrt</Sqrt>
+				<Sin suffix="( &lt;аргумент&gt; )">sin</Sin>
+				<Cos suffix="( &lt;аргумент&gt; )">cos</Cos>
+				<Tan suffix="( &lt;аргумент&gt; )">tan</Tan>
+				<Asin suffix="( &lt;аргумент&gt; )">asin</Asin>
+				<Acos suffix="( &lt;аргумент&gt; )">acos</Acos>
+				<Atan suffix="( &lt;аргумент&gt; )">atan</Atan>
+				<Round suffix="( &lt;аргумент&gt; )">round</Round>
+			</Function>
+		</Expressions>
+	</CodeStyle>
+
+
+	<CodeStyle name="C" aliasName="cStyle">
+		<Keyword name="if"/>
+		<Keyword name="else"/>
+		<Keyword name="elseif"/>
+		<Keyword name="do"/>
+		<Keyword name="while"/>
+
+		<Keyword name="sqrt"/>
+		<Keyword name="sin"/>
+		<Keyword name="cos"/>
+		<Keyword name="tan"/>
+		<Keyword name="asin"/>
+		<Keyword name="acos"/>
+		<Keyword name="atan"/>
+		<Keyword name="round"/>
+
+		<If entry="if">
+			<IfInsert>if( &lt;условие&gt; ){\n\t\n};\n</IfInsert>
+			<IfElseInsert>if( &lt;условие&gt; ){\n\t\n};\nelse{\n\t\n};\n</IfElseInsert>
+			<Condition start="(" end=")"/>
+			<Block start="{" end="}"/>
+			<Elseif>elseif</Elseif>
+			<Else>else</Else>
+		</If>
+		<While entry="while">
+			<WhileInsert>while( &lt;условие&gt; ){\n\t\n};\n</WhileInsert>
+			<Condition start="(" end=")"/>
+			<Block start="{" end="}"/>
+		</While>
+		<DoWhile entry="do">
+			<DoWhileInsert>do{\n\t\n}while( &lt;условие&gt; );\n</DoWhileInsert>
+			<Block start="{" end="}"/>
+			<While>while</While>
+			<Condition start="(" end=")"/>
+		</DoWhile>
+		<Expressions>
+			<Assign>=</Assign>
+			<Eq>==</Eq>
+			<Neq>!=</Neq>
+			<Lt>&lt;</Lt>
+			<Gt>&gt;</Gt>
+			<Lte>&lt;=</Lte>
+			<Gte>&gt;=</Gte>
+			<Not>!</Not>
+			<Or>||</Or>
+			<And>&amp;&amp;</And>
+			<Mod>%</Mod>
+			<Comment single="//" multiStart="/*" multiEnd="*/">
+				<SingleInsert>// &lt;комментарий&gt;\n</SingleInsert>
+				<MultilineInsert>/*\n&lt;комментарий&gt;\n*/\n</MultilineInsert>
+			</Comment>
+			<Group start="(" end=")"/>
+			<ArrayIndex start="[" end="]"/>
+			<BlockEnd>;</BlockEnd>
+			<Quotes single="'" double="&quot;"/>
+			<UnaryAdd>+=</UnaryAdd>
+			<UnaryAddOne>++</UnaryAddOne>
+			<UnarySub>-=</UnarySub>
+			<UnarySubOne>--</UnarySubOne>
+			<UnaryMul>*=</UnaryMul>
+			<UnaryDiv>/=</UnaryDiv>
+
+			<Function>
+				<Sqrt suffix="( &lt;аргумент&gt; )">sqrt</Sqrt>
+				<Sin suffix="( &lt;аргумент&gt; )">sin</Sin>
+				<Cos suffix="( &lt;аргумент&gt; )">cos</Cos>
+				<Tan suffix="( &lt;аргумент&gt; )">tan</Tan>
+				<Asin suffix="( &lt;аргумент&gt; )">asin</Asin>
+				<Acos suffix="( &lt;аргумент&gt; )">acos</Acos>
+				<Atan suffix="( &lt;аргумент&gt; )">atan</Atan>
+				<Round suffix="( &lt;аргумент&gt; )">round</Round>
+			</Function>
+		</Expressions>
+	</CodeStyle>
+
+<!--
+	<CodeStyle name="Свободный" isFree="true" aliasName="freeStyle">
+		<Keyword name="if"/>
+		<Keyword name="then"/>
+		<Keyword name="begin"/>
+		<Keyword name="else"/>
+		<Keyword name="elseif"/>
+		<Keyword name="end"/>
+		<Keyword name="endif"/>
+		<Keyword name="repeat"/>
+		<Keyword name="until"/>
+		<Keyword name="and"/>
+		<Keyword name="or"/>
+		<Keyword name="not"/>
+		<Keyword name="mod"/>
+		<Keyword name="do"/>
+		<Keyword name="while"/>
+		<Keyword name="wend"/>
+		<Keyword name="loop"/>
+		<Keyword name="sqrt"/>
+		<Keyword name="sin"/>
+		<Keyword name="cos"/>
+		<Keyword name="tan"/>
+		<Keyword name="asin"/>
+		<Keyword name="acos"/>
+		<Keyword name="atan"/>
+		<Keyword name="round"/>
+	</CodeStyle>
+-->
+
+
+	<CodeStyle name="Pascal" aliasName="pascalStyle">
+		<Keyword name="if"/>
+		<Keyword name="then"/>
+		<Keyword name="while"/>
+		<Keyword name="do"/>
+		<Keyword name="begin"/>
+		<Keyword name="else"/>
+		<Keyword name="elseif"/>
+		<Keyword name="end"/>
+		<Keyword name="repeat"/>
+		<Keyword name="until"/>
+		<Keyword name="and"/>
+		<Keyword name="or"/>
+		<Keyword name="not"/>
+
+		<Keyword name="sqrt"/>
+		<Keyword name="sin"/>
+		<Keyword name="cos"/>
+		<Keyword name="tan"/>
+		<Keyword name="asin"/>
+		<Keyword name="acos"/>
+		<Keyword name="atan"/>
+		<Keyword name="round"/>
+
+		<If entry="if">
+			<IfInsert>if &lt;условие&gt; then begin\n\t\nend;\n</IfInsert>
+			<IfElseInsert>if &lt;условие&gt; then begin\n\t\nelse\n\t\nend;\n</IfElseInsert>
+			<Condition start="" end="then"/>
+			<Block start="begin" end="end"/>
+			<Elseif>elseif</Elseif>
+			<Else>else</Else>
+		</If>
+		<While entry="while">
+			<WhileInsert>while &lt;условие&gt; do begin\n\t\nend;\n</WhileInsert>
+			<Condition start="" end="do"/>
+			<Block start="begin" end="end"/>
+		</While>
+		<DoWhile entry="repeat">
+			<DoWhileInsert>repeat\n\t\nuntil &lt;условие&gt;;\n</DoWhileInsert>
+			<Block start="" end=""/>
+			<While bInverse="true">until</While>
+			<Condition start="" end=""/>
+		</DoWhile>
+		<Expressions>
+			<Assign>:=</Assign>
+			<Eq>=</Eq>
+			<Neq>&lt;&gt;</Neq>
+			<Lt>&lt;</Lt>
+			<Gt>&gt;</Gt>
+			<Lte>&lt;=</Lte>
+			<Gte>&gt;=</Gte>
+			<Not>not</Not>
+			<Or>or</Or>
+			<And>and</And>
+			<Mod>mod</Mod>
+			<Comment single="--" multiStart="{" multiEnd="}">
+				<SingleInsert>-- &lt;комментарий&gt;\n</SingleInsert>
+				<MultilineInsert>{\n&lt;комментарий&gt;\n}\n</MultilineInsert>
+			</Comment>
+			<Group start="(" end=")"/>
+			<ArrayIndex start="[" end="]"/>
+			<BlockEnd>;</BlockEnd>
+			<Quotes single="'" double="&quot;"/>
+			
+			<Function>
+				<Sqrt suffix="( &lt;аргумент&gt; )">sqrt</Sqrt>
+				<Sin suffix="( &lt;аргумент&gt; )">sin</Sin>
+				<Cos suffix="( &lt;аргумент&gt; )">cos</Cos>
+				<Tan suffix="( &lt;аргумент&gt; )">tan</Tan>
+				<Asin suffix="( &lt;аргумент&gt; )">asin</Asin>
+				<Acos suffix="( &lt;аргумент&gt; )">acos</Acos>
+				<Atan suffix="( &lt;аргумент&gt; )">atan</Atan>
+				<Round suffix="( &lt;аргумент&gt; )">round</Round>
+			</Function>
+		</Expressions>
+	</CodeStyle>
+
+
+</CodeEditor>

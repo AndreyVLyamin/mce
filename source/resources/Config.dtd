@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by eugene (cde) -->
+<!ELEMENT Config (Port, UserInfo+, Timeouts*)>
+<!ELEMENT Port EMPTY>
+<!ATTLIST Port
+	value CDATA #REQUIRED
+>
+<!ELEMENT UserInfo EMPTY>
+<!ATTLIST UserInfo
+	login CDATA #REQUIRED
+	password CDATA #REQUIRED
+>
+<!ELEMENT Timeouts (Timeout*)>
+<!ELEMENT Timeout EMPTY>
+<!ATTLIST Timeout
+	name  CDATA #REQUIRED
+	value CDATA #REQUIRED
+>

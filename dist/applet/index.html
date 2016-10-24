@@ -1,0 +1,22 @@
+<applet id="VirtLabApplet" name="VirtLabApplet" code="EditPaneApplet" width="800" height="500" archive="laboratoryTool.zip">
+	<param name="debug-on" value="true"/>
+	<param name="parameter" value="
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;Windows&amp;amp;minus;1251&quot;?&gt;
+&lt;ProgramEnvironment&gt;
+&lt;Variable input=&quot;false&quot; output=&quot;false&quot; inner=&quot;true&quot;&gt;
+&lt;Name&gt;&lt;!&amp;amp;minus;&amp;amp;minus;a&amp;amp;minus;&amp;amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;amp;minus;&amp;amp;minus;0&amp;amp;minus;&amp;amp;minus;&gt;&lt;/Type&gt;
+&lt;Value&gt;&lt;!&amp;amp;minus;&amp;amp;minus;1&amp;amp;minus;&amp;amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Code style=&quot;cStyle&quot;&gt;&lt;!&amp;amp;minus;&amp;amp;minus;/* test */&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;a = 0;&amp;amp;minus;&amp;amp;minus;&gt;&lt;/Code&gt;
+&lt;/ProgramEnvironment&gt;
+
+	"/>
+</applet>
+
+<br/>
+
+<input type="button" value="test getResults" onClick="
+	alert( document.getElementById('VirtLabApplet').getResults() );
+"/>

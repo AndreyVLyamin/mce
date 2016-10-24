@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!DOCTYPE TestConfig SYSTEM "TestSet.dtd">
+<TestConfig>
+	<URL>url:rlcp://ove:ove@127.0.0.1:2003</URL>
+	<RLCPRequest>
+		<Request>
+			<Conditions>
+				<ConditionForChecking id="1" Time="5">
+					<Input>
+						<!-- a=[W k h   v w d w h p h q w v   d u h   d o o   o h j d o .] -->
+					</Input>
+					<Output>
+						<!-- b=[T h e   s t a t e m e n t s   a r e   a l l   l e g a l .                                          ] -->
+					</Output>
+				</ConditionForChecking>
+
+			</Conditions>
+			<Instructions>
+				<!-- 
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;Windows&amp;minus;1251&quot;?&gt;
+&lt;ProgramEnvironment&gt;
+&lt;Variable input=&quot;true&quot; output=&quot;false&quot; inner=&quot;false&quot;&gt;
+&lt;Name&gt;&lt;!&amp;minus;&amp;minus;a&amp;minus;&amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;minus;&amp;minus;5&amp;minus;&amp;minus;&gt;&lt;/Type&gt;
+&lt;Value N=&quot;0&quot;&gt;&lt;!&amp;minus;&amp;minus;W&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;1&quot;&gt;&lt;!&amp;minus;&amp;minus;k&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;2&quot;&gt;&lt;!&amp;minus;&amp;minus;h&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;3&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;4&quot;&gt;&lt;!&amp;minus;&amp;minus;v&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;5&quot;&gt;&lt;!&amp;minus;&amp;minus;w&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;6&quot;&gt;&lt;!&amp;minus;&amp;minus;d&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;7&quot;&gt;&lt;!&amp;minus;&amp;minus;w&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;8&quot;&gt;&lt;!&amp;minus;&amp;minus;h&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;9&quot;&gt;&lt;!&amp;minus;&amp;minus;.&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;10&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;11&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;12&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;13&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;14&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;15&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;16&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;17&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;18&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;19&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;20&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;21&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;22&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;23&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;24&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;25&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;26&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;27&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;28&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;29&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;30&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;31&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;32&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;33&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;34&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;35&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;36&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;37&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;38&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;39&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;40&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;41&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;42&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;43&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;44&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;45&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;46&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;47&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;48&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;49&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Variable input=&quot;false&quot; output=&quot;true&quot; inner=&quot;false&quot;&gt;
+&lt;Name&gt;&lt;!&amp;minus;&amp;minus;b&amp;minus;&amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;minus;&amp;minus;5&amp;minus;&amp;minus;&gt;&lt;/Type&gt;
+&lt;Value N=&quot;0&quot;&gt;&lt;!&amp;minus;&amp;minus;T&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;1&quot;&gt;&lt;!&amp;minus;&amp;minus;h&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;2&quot;&gt;&lt;!&amp;minus;&amp;minus;e&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;3&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;4&quot;&gt;&lt;!&amp;minus;&amp;minus;s&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;5&quot;&gt;&lt;!&amp;minus;&amp;minus;t&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;6&quot;&gt;&lt;!&amp;minus;&amp;minus;a&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;7&quot;&gt;&lt;!&amp;minus;&amp;minus;t&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;8&quot;&gt;&lt;!&amp;minus;&amp;minus;e&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;9&quot;&gt;&lt;!&amp;minus;&amp;minus;.&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;10&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;11&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;12&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;13&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;14&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;15&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;16&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;17&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;18&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;19&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;20&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;21&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;22&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;23&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;24&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;25&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;26&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;27&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;28&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;29&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;30&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;31&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;32&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;33&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;34&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;35&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;36&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;37&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;38&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;39&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;40&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;41&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;42&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;43&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;44&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;45&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;46&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;47&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;48&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;49&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Variable input=&quot;false&quot; output=&quot;false&quot; inner=&quot;true&quot;&gt;
+&lt;Name&gt;&lt;!&amp;minus;&amp;minus;i&amp;minus;&amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;minus;&amp;minus;0&amp;minus;&amp;minus;&gt;&lt;/Type&gt;
+&lt;Value&gt;&lt;!&amp;minus;&amp;minus;0&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Variable input=&quot;false&quot; output=&quot;false&quot; inner=&quot;true&quot;&gt;
+&lt;Name&gt;&lt;!&amp;minus;&amp;minus;minlen&amp;minus;&amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;minus;&amp;minus;0&amp;minus;&amp;minus;&gt;&lt;/Type&gt;
+&lt;Value&gt;&lt;!&amp;minus;&amp;minus;0&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Variable input=&quot;false&quot; output=&quot;false&quot; inner=&quot;true&quot;&gt;
+&lt;Name&gt;&lt;!&amp;minus;&amp;minus;cnt&amp;minus;&amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;minus;&amp;minus;0&amp;minus;&amp;minus;&gt;&lt;/Type&gt;
+&lt;Value&gt;&lt;!&amp;minus;&amp;minus;0&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Code style=&quot;cStyle&quot;&gt;&lt;!&amp;minus;&amp;minus;minlen = 50;&amp;lt;br/&amp;gt;while( i &amp;lt; 50 ){&amp;lt;br/&amp;gt;    if( a[i] &amp;gt;= 'A' &amp;amp;&amp;amp; a[i] &amp;lt;= 'Z' || a[i] &amp;gt;= 'a' &amp;amp;&amp;amp; a[i] &amp;lt;= 'z' ){&amp;lt;br/&amp;gt;        cnt++;&amp;lt;br/&amp;gt;    }elseif( a[i] == ' ' ){&amp;lt;br/&amp;gt;        if( cnt &amp;gt; 0 &amp;amp;&amp;amp; cnt &amp;lt; minlen ){&amp;lt;br/&amp;gt;            minlen = cnt;&amp;lt;br/&amp;gt;            cnt = 0;&amp;lt;br/&amp;gt;        };&amp;lt;br/&amp;gt;    }elseif( a[i] == '.' ){&amp;lt;br/&amp;gt;        i = 50;&amp;lt;br/&amp;gt;    };&amp;lt;br/&amp;gt;    i++;&amp;lt;br/&amp;gt;};&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;i = 0;&amp;lt;br/&amp;gt;while( i &amp;lt; 50 ){&amp;lt;br/&amp;gt;    if( (a[i] &amp;gt;= 'A' &amp;amp;&amp;amp; a[i] &amp;lt;= 'Z') ){&amp;lt;br/&amp;gt;        if( (a[i] &amp;amp;minus; minlen) &amp;lt; 'A' ){&amp;lt;br/&amp;gt;            b[i] = 'Z' + (a[i] &amp;amp;minus; 'A' &amp;amp;minus; minlen + 1);&amp;lt;br/&amp;gt;        }else{&amp;lt;br/&amp;gt;            b[i] = a[i] &amp;amp;minus; minlen;&amp;lt;br/&amp;gt;        };&amp;lt;br/&amp;gt;    }elseif( (a[i] &amp;gt;= 'a' &amp;amp;&amp;amp; a[i] &amp;lt;= 'z' ) ){&amp;lt;br/&amp;gt;        if( (a[i] &amp;amp;minus; minlen) &amp;lt; 'a' ){&amp;lt;br/&amp;gt;            b[i] = 'z' + (a[i] &amp;amp;minus; 'a' &amp;amp;minus; minlen + 1);&amp;lt;br/&amp;gt;        }else{&amp;lt;br/&amp;gt;            b[i] = a[i] &amp;amp;minus; minlen;&amp;lt;br/&amp;gt;        };&amp;lt;br/&amp;gt;    }elseif( a[i] == '.' ){&amp;lt;br/&amp;gt;        b[i] = a[i];&amp;lt;br/&amp;gt;        i = 50;&amp;lt;br/&amp;gt;    }else{&amp;lt;br/&amp;gt;        b[i] = a[i];&amp;lt;br/&amp;gt;    };&amp;lt;br/&amp;gt;    i++;&amp;lt;br/&amp;gt;};&amp;lt;br/&amp;gt;&amp;minus;&amp;minus;&gt;&lt;/Code&gt;
+&lt;/ProgramEnvironment&gt; -->
+			</Instructions>
+		</Request>
+	</RLCPRequest>
+</TestConfig>

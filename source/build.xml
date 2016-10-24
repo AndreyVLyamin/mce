@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<project name="buildlab" default="buildlab" basedir=".">
+
+	<description>
+    </description>
+
+   	<property name="dist.dir" value="dist"/>
+   	<property name="work.client" value="${dist.dir}/applet"/>
+   	<property name="work.server" value="${dist.dir}/server"/>
+	<property name="work.arch" value="arch"/>
+   	<property name="work.code" value="${dist.dir}/code"/>
+   	<property name="work.code.client" value="${work.code}/applet"/>
+   	<property name="work.code.server" value="${work.code}/server"/>
+   	<property name="work.code.unjared" value="${work.code}/unjaredlibs"/>
+
+
+<!--
+	<target name="builddist">
+		<mkdir dir="dist/dist"/>
+		<mkdir dir="dist/doc/javadoc"/>
+		<mkdir dir="dist/doc/manual"/>
+		<mkdir dir="dist/project"/>
+		<mkdir dir="dist/release/applet"/>
+		<mkdir dir="dist/release/server"/>
+
+		<copy todir="dist/dist">
+			<fileset dir="Work/zip">
+				<include name="server.jar"/>
+				<include name="Config.dtd"/>
+				<include name="Config.xml"/>
+			</fileset>
+		</copy>
+
+		<copy todir="dist/release/applet">
+			<fileset dir="Work/zip">
+				<include name="laboratoryTool.zip"/>
+				<include name="index.html"/>
+			</fileset>
+		</copy>
+
+		<copy todir="dist/release/server">
+			<fileset dir="Work/zip">
+				<include name="server.jar"/>
+				<include name="Config.dtd"/>
+				<include name="Config.xml"/>
+			</fileset>
+		</copy>
+
+		<copy todir="dist/project">
+			<fileset dir=".">
+				<include name="*lib*/**/*.*"/>
+				<include name="*resources*/**/*.*"/>
+				<exclude name="*resources*/*tests*/**/*.*"/>
+				<include name="*src*/**/*.*"/>
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+
+		<javadoc sourcepath="src" packagenames="*" destdir="dist/doc/javadoc">
+		</javadoc>
+
+		<echo>Please copy HTML user manual to dist/doc/!</echo>
+
+	</target>
+-->
+
+	<target name="buildlab">
+
+		<!-- prepare working directories -->
+
+<!--		<delete dir="${dist.dir}"/> -->
+		<mkdir dir="${work.client}"/>
+		<mkdir dir="${work.server}"/>
+		<mkdir dir="${work.code.client}"/>
+		<mkdir dir="${work.code.server}"/>
+		<mkdir dir="${work.code.unjared}"/>
+		<mkdir dir="${work.arch}"/>
+
+		<!-- compile all -->
+
+		<javac srcdir="src" debug="on" destdir="${work.code}" target="1.5">
+			<classpath>
+				<pathelement path="${classpath}"/>
+				<fileset dir="lib">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+		</javac>
+
+		<!-- prepare client -->
+
+		<copy todir="${work.code.client}">
+			<fileset dir="${work.code}">
+				<exclude name="AbsCodeServer"/>
+				<exclude name="*AbsCodeServer*/**/*.*"/>
+				<exclude name="**/ProgramSerializerDOM4j.class"/>
+				<exclude name="**/TemplateFactoryXml.class"/>
+			</fileset>
+
+			<fileset dir=".">
+				<include name="resources/**/*.gif"/>
+				<include name="resources/**/*.GIF"/>
+				<exclude name="resources/tests/*.*"/>
+			</fileset>
+
+			<fileset dir="resources">
+				<include name="conf-new.xml"/>
+<!--
+				<include name="conf-new.txt"/>
+-->
+			</fileset>
+		</copy>
+
+		<!-- prepare server -->
+
+		<copy todir="${work.code.server}">
+			<fileset dir="${work.code}">
+				<include name="*AbsCodeServer*/**/*.*"/>
+				<include name="*dlc*/**/*.*"/>
+			</fileset>
+
+			<fileset dir="resources" includes="conf-new.xml"/>
+		</copy>
+
+		<!-- zip and obfuscate client -->
+		<zip destfile="${work.client}/laboratoryTool.zip">
+			<fileset dir="${work.code.client}"/>
+		</zip>
+
+<!--
+		<zip destfile="Work/zip/laboratoryTool_.zip">
+			<fileset dir="Work/Code/client"/>
+		</zip>
+		<java classname="proguard.ProGuard" classpath="lib/proguard.jar" fork="true">
+			<arg value="@lib/labTool.pro"/>
+		</java>
+-->
+
+		<!-- pack server.jar -->
+
+		<jar destfile="${work.server}/server.jar" basedir="${work.code.server}" manifest="resources/srv_manifest.mf"/>
+
+		<!-- appending library jars to client and server -->
+
+		<unjar src="lib/dom4j.jar" dest="${work.code.unjared}"/>
+		<unjar src="lib/jaxen.jar" dest="${work.code.unjared}"/>
+<!--
+		<jar update="true" basedir="${work.code.unjared}" destfile="${work.client}/laboratoryTool.zip"/>
+-->
+		<jar update="true" basedir="${work.code.unjared}" destfile="${work.server}/server.jar" excludes="*META-INF*/**/*.*"/>
+		<delete dir="Work/Code/unjaredlibs"/>
+
+		<!-- copy test html file to clients applet dir -->
+
+		<copy todir="${work.client}">
+			<fileset dir="resources" includes="index*.html"/>
+		</copy>
+
+		<!-- copy config files to servers dir -->
+
+		<copy todir="${work.server}">
+			<fileset dir="resources">
+				<include name="Config.*"/>
+				<include name="r.bat"/>
+				<include name="r.sh"/>
+			</fileset>
+		</copy>
+
+		<!-- remove temporary dirs and files -->
+
+		<delete dir="${work.code}"/>
+
+<!--
+		<mkdir dir="${work.server}/mce"/>
+-->
+		<move todir="${work.server}/mce">
+			<fileset dir="${work.server}" excludes="mce"/>
+		</move>
+
+		<zip destfile="${work.arch}/mce.zip" basedir="${work.server}"/>
+<!--
+		<mkdir dir="${dist.dir}/data/input"/>
+		<copy todir="${dist.dir}/data/input">
+			<fileset dir="resources/tests" includes="**/*.*"/>
+		</copy>
+-->
+<!--
+		<javadoc sourcepath="src" packagenames="*" destdir="doc/javadoc">
+		</javadoc>
+-->
+	</target>
+
+	<target name="test-server">
+		<java jar="${work.server}/mce/server.jar" dir="${work.server}/mce" fork="true">
+
+			<classpath>
+
+				<pathelement location="classes"/>
+				<fileset dir="lib">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+
+			</classpath>
+
+			<arg value="../../../resources/Config.xml"/>
+
+		</java>
+	</target>
+
+	<target name="test">
+
+		<mkdir dir="${dist.dir}/data/input"/>
+		<mkdir dir="${dist.dir}/data/output"/>
+
+		<copy todir="${dist.dir}/data/input">
+			<fileset dir="resources/tests" includes="**/*.*"/>
+		</copy>
+		
+		<java classname="test.Tester" dir="${work.client}" fork="true">
+			<classpath>
+				<pathelement location="${work.client}/laboratoryTool.zip"/>
+				<pathelement path="${classpath}"/>
+				<fileset dir="lib">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+			</classpath>
+
+			<arg value="../data/input"/>
+			<arg value="../data/output"/>
+
+		</java>
+	</target>
+
+	<target name="testesc">
+
+		<java classname="Test" dir="${work.client}" fork="true">
+			<classpath>
+				<pathelement location="${work.client}/laboratoryTool.zip"/>
+				<pathelement path="${classpath}"/>
+				<fileset dir="lib">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+			</classpath>
+
+		</java>
+	</target>
+
+	<target name="checkanswer">
+		<java classname="AbsCodeServer.AnswerChecker" dir="${work.server}" fork="true">
+			<classpath>
+				<pathelement location="${work.server}/server.jar"/>
+				<pathelement path="${classpath}"/>
+				<fileset dir="lib">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+			</classpath>
+		</java>
+	</target>
+
+</project>

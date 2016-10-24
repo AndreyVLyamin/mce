@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!DOCTYPE TestConfig SYSTEM "TestSet.dtd">
+<TestConfig>
+	<URL>url:rlcp://ove:ove@127.0.0.1:2003</URL>
+	<RLCPRequest>
+		<Request>
+			<Conditions>
+				<ConditionForChecking id="1" Time="5">
+					<Input>
+						<!-- a=1111 -->
+					</Input>
+					<Output>
+						<!--
+b=['1', '.'];
+c=1;
+d=2;
+e{10}=1.21E+3;
+f{10}=1.4E-3;
+ -->
+					</Output>
+				</ConditionForChecking>
+
+			</Conditions>
+			<Instructions>
+				<!-- 
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;Windows&amp;minus;1251&quot;?&gt;
+&lt;ProgramEnvironment&gt;
+&lt;Variable input=&quot;true&quot; output=&quot;false&quot; inner=&quot;false&quot;&gt;
+&lt;Name&gt;&lt;!&amp;minus;&amp;minus;a&amp;minus;&amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;minus;&amp;minus;0&amp;minus;&amp;minus;&gt;&lt;/Type&gt;
+&lt;Value&gt;&lt;!&amp;minus;&amp;minus;1&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Variable input=&quot;false&quot; output=&quot;true&quot; inner=&quot;false&quot;&gt;
+&lt;Name&gt;&lt;!&amp;minus;&amp;minus;b&amp;minus;&amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;minus;&amp;minus;5&amp;minus;&amp;minus;&gt;&lt;/Type&gt;
+&lt;Value N=&quot;0&quot;&gt;&lt;!&amp;minus;&amp;minus;1&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;1&quot;&gt;&lt;!&amp;minus;&amp;minus;.&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;2&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;3&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;Value N=&quot;4&quot;&gt;&lt;!&amp;minus;&amp;minus; &amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Variable input=&quot;false&quot; output=&quot;true&quot; inner=&quot;false&quot;&gt;
+&lt;Name&gt;&lt;!&amp;minus;&amp;minus;c&amp;minus;&amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;minus;&amp;minus;0&amp;minus;&amp;minus;&gt;&lt;/Type&gt;
+&lt;Value&gt;&lt;!&amp;minus;&amp;minus;1&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Variable input=&quot;false&quot; output=&quot;true&quot; inner=&quot;false&quot;&gt;
+&lt;Name&gt;&lt;!&amp;minus;&amp;minus;d&amp;minus;&amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;minus;&amp;minus;0&amp;minus;&amp;minus;&gt;&lt;/Type&gt;
+&lt;Value&gt;&lt;!&amp;minus;&amp;minus;2&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Variable input=&quot;false&quot; output=&quot;true&quot; inner=&quot;false&quot;&gt;
+&lt;Name&gt;&lt;!&amp;minus;&amp;minus;e&amp;minus;&amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;minus;&amp;minus;1&amp;minus;&amp;minus;&gt;&lt;/Type&gt;
+&lt;Value&gt;&lt;!&amp;minus;&amp;minus;1.3E+3&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Variable input=&quot;false&quot; output=&quot;true&quot; inner=&quot;false&quot;&gt;
+&lt;Name&gt;&lt;!&amp;minus;&amp;minus;f&amp;minus;&amp;minus;&gt;&lt;/Name&gt;
+&lt;Type&gt;&lt;!&amp;minus;&amp;minus;1&amp;minus;&amp;minus;&gt;&lt;/Type&gt;
+&lt;Value&gt;&lt;!&amp;minus;&amp;minus;1.3E&amp;amp;minus;3&amp;minus;&amp;minus;&gt;&lt;/Value&gt;
+&lt;/Variable&gt;
+&lt;Code style=&quot;cStyle&quot;&gt;&lt;!&amp;minus;&amp;minus;/* test */&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;a = 0;&amp;minus;&amp;minus;&gt;&lt;/Code&gt;
+&lt;/ProgramEnvironment&gt;
+ -->
+			</Instructions>
+		</Request>
+	</RLCPRequest>
+</TestConfig>

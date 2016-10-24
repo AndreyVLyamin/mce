@@ -1,0 +1,94 @@
+
+import org.dom4j.*;
+import org.dom4j.io.*;
+
+import javax.swing.*;
+import java.util.*;
+import java.io.File;
+import java.io.InputStream;
+
+/**
+ * $Id: SyntaxDocumentConfig.java,v 1 2007/02/20
+ * <br/>
+ * Author: Вашенков О.Е.
+ * <br/>
+ * Класс, хранящий конфигурацию типа документа для SyntaxDocument.
+ */
+
+public class SyntaxDocumentConfig {
+    public Hashtable keywords = new Hashtable();
+    public Hashtable funcs = new Hashtable();
+    public Hashtable helpPages = new Hashtable();
+    public Vector    buttons = new Vector();
+
+    public boolean readConfig( String path ){
+        try{
+
+            InputStream is = getClass().getClassLoader().getResourceAsStream( path );
+            SAXReader r = new SAXReader();
+            Document doc = r.read( is );
+
+            keywords = new Hashtable();
+            helpPages = new Hashtable();
+
+            java.util.List nodes = doc.selectNodes( "//Keywords/Keyword" );
+            for( Iterator it = nodes.iterator(); it.hasNext(); ){
+                Node n = (Node)it.next();
+                String kword = n.selectSingleNode("@name").getText();
+                keywords.put( kword.toLowerCase(), n.selectSingleNode("Append").getText() );
+                helpPages.put( kword.toLowerCase(), n.selectSingleNode("HelpPage").getText() );
+            }
+
+            funcs = new Hashtable();
+            nodes = doc.selectNodes( "//Functions/Function" );
+            for( Iterator it = nodes.iterator(); it.hasNext(); ){
+                Node n = (Node)it.next();
+                String funcName = n.selectSingleNode("@name").getText();
+                funcs.put( funcName.toLowerCase(), n.selectSingleNode("Append").getText() );
+                helpPages.put( funcName.toLowerCase(), n.selectSingleNode("HelpPage").getText() );
+            }
+
+            nodes = doc.selectNodes( "//HelpPages/HelpPage" );
+            for( Iterator it = nodes.iterator(); it.hasNext(); ){
+                Node n = (Node)it.next();
+                String helpTitle = n.selectSingleNode("@title").getText();
+                helpPages.put( helpTitle.toLowerCase(), n.getText() );
+            }
+
+            /**
+             * Читаем параметры кнопок
+             */
+            buttons = new Vector();
+            nodes = doc.selectNodes( "//Buttons/Button");
+            for( Iterator it = nodes.iterator(); it.hasNext(); ){
+                Node n = (Node)it.next();
+                String tooltip = n.selectSingleNode("@tooltip").getText();
+                String imagePath = n.selectSingleNode("@image").getText();
+                String code = n.selectSingleNode("Code").getText();
+
+                buttons.addElement( tooltip );
+                buttons.addElement( imagePath );
+                buttons.addElement( code );
+                buttons.addElement( "" ); //for JButton object instance
+            }
+
+            nodes = doc.selectNodes( "//Operations/Operation");
+            for( Iterator it = nodes.iterator(); it.hasNext(); ){
+                Node n = (Node)it.next();
+                String tooltip = n.selectSingleNode("Button/@tooltip").getText();
+                String imagePath = n.selectSingleNode("Button/@image").getText();
+                String code = n.selectSingleNode("Code").getText();
+
+                buttons.addElement( tooltip );
+                buttons.addElement( imagePath );
+                buttons.addElement( code );
+                buttons.addElement( "" ); //for JButton object instance
+            }
+
+        }catch( Exception e ){
+            //e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+}
